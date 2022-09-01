@@ -14,20 +14,6 @@
 //randomly generates a password
   function generatePassword(_arrayOfArraysOfCharacters) {
   var password ="";
-
-for ( var i = 0; i < passwordLength; i++) {
-  var index = Math.floor(Math.random()* possibleCharacters.length);
-  var individualCharacterIndex = Math.floor(Math.random()* possibleCharacters[index].length);
-  password += possibleCharacters[index][individualCharacterIndex];
-  console.log(password);
-
-  
-	}
-  return password;
-}
-
-
-
 //has the user verify the length of password they want
 var passwordLength= window.prompt("How many characters would you like your password to contain?");
   if (passwordLength > 128) {
@@ -58,6 +44,21 @@ var includeUppercaseCharacters = window.confirm("click to confirm to include upp
   if (includeUppercaseCharacters){
     possibleCharacters.push(upperCase);
 }
+
+
+for ( var i = 0; i < passwordLength; i++) {
+  var index = Math.floor(Math.random()* possibleCharacters.length);
+  var individualCharacterIndex = Math.floor(Math.random()* possibleCharacters[index].length);
+  password += possibleCharacters[index][individualCharacterIndex];
+  console.log(password);
+
+  
+	}
+  return password;
+}
+
+
+
 
 
 // Write password to the #password input
