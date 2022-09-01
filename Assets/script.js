@@ -12,13 +12,14 @@
   var passwordLength = 128;
   var possibleCharacters =[];
 
-  function generatePassword(upperCase, lowerCase, numbers, specialCharacters) {
+  function generatePassword(arrayOfArraysOfCharacters) {
+    var password = "";
 
 for ( var i = 0; i < passwordLength; i++) {
-  var password = window.crypto.getRandomValues(writePassword);
-  return password;
-  
+  var chosenArray = PossibleCharacters[randomIndex]
+  password += radomCharacter
 }
+return password
 
 }
 //has the user verify the length of password they want
