@@ -13,18 +13,25 @@ function generatePassword() {
   var possibleCharacters =[];
 
 for ( var i = 0; i < passwordLength; i++) {
-  var possibleCharacters = window.crypto.getRandomValues();
-  console.log();
+  var password = window.crypto.getRandomValues(writePassword);
+  console.log(password);
 }
 
 }
-var userLength= window.prompt("How many characters would you like your password to contain?");
+var passwordLength= window.prompt("How many characters would you like your password to contain?");
+if (passwordLength > 128) {
+  alert("Password must be less than 129 characters");
+  var passwordLength= window.prompt("How many characters would you like your password to contain?");
+}
+
+
+
 var includeSpecialCharacters = window.confirm("Click to confirm to include special characters.");
 var includeNumericCharacters = window.confirm("Click to confirm to include numberic characters.");
 var includeLowercaseCharacters = window.confirm("click to confirm to include lowercase characters.");
 var includeUppercaseCharacters = window.confirm("click to confirm to include uppercase characters.");
 
-// alert("Password must be less than 129 characters");
+
 
 
 if  (includeSpecialCharacters) {
@@ -45,7 +52,6 @@ if (includeUppercaseCharacters){
 function writePassword() {
   var password = generatePassword()
   var passwordText = document.querySelector("#password");
-  window.crypto.getRandomValues();
   passwordText.value = password;
 console.log(password);
 }
